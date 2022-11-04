@@ -1,8 +1,8 @@
 # java-bank
 
-Criar a estrutura de uma agencia bancaria com banco de dados MySQL e JAVA
+Criar a estrutura de uma agência bancaria com banco de dados MySQL e JAVA
 
-Funções:
+Features:
   * Criar nova conta
   * Realizar Login
   
@@ -10,3 +10,4 @@ Funções:
   * Sacar
   * Depositar
   * Transferir
+  * Ver extrato bancario
