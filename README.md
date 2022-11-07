@@ -1,13 +1,9 @@
 # java-bank
 
+<<<<<<< HEAD
 Criar a estrutura de um banco com MySQL e JAVA
 
+=======
+>>>>>>> feature
 Features:
-  * Criar nova conta
-  * Realizar Login
-  
- Metodos:
-  * Sacar
-  * Depositar
-  * Transferir
-  * Ver extrato bancario
+  * Conexão com Banco de Dados
