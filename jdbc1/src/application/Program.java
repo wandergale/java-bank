@@ -20,10 +20,10 @@ public class Program {
 			
 			st = conn.createStatement();
 			
-			rs = st.executeQuery("SELECT * FROM banco.java-bank");
+			rs = st.executeQuery("SELECT * FROM javaBank");
 			
 			while (rs.next()) {
-				System.out.println(rs.getInt("clientId")+", " + rs.getString("clientName"));
+				System.out.println(rs.getInt("client_id")+", " + rs.getString("client_name"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
