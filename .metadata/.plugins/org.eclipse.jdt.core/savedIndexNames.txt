@@ -1,5 +1,8 @@
 INDEX VERSION 1.131+C:\Users\wande\Documents\WorkSpace\java-bank\.metadata\.plugins\org.eclipse.jdt.core
 2444866652.index
 1865797976.index
+<<<<<<< HEAD
 4123552910.index
+=======
+>>>>>>> f38bde4ea395301114ceb0517aa439315bd9e1b3
 4178919815.index
