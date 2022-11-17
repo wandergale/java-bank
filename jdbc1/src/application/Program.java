@@ -1,16 +1,15 @@
-package application;
+package src.application;
 
 import java.sql.Connection;
 import java.util.Scanner;
 
-import db.DB;
-import db.connections.Connections;
-import entities.Bank;
+import src.db.DB;
+import src.db.connections.Connections;
+import src.entities.Bank;
 
 public class Program {
 
 	public static void main(String[] args) {
-
 		Scanner sc = new Scanner(System.in);
 		
 		Connection conn = DB.getConnection();
@@ -33,7 +32,7 @@ public class Program {
 				String pass = sc.nextLine();
 				
 				String result = connec.logIn(name, pass);
-				
+		
 				if (result != null) {
 					
 					Bank user_account = new Bank(conn, name, pass);
@@ -85,24 +84,23 @@ public class Program {
 				return;
 			}
 		}
-		
-		DB.closeConnection();
+
+	sc.close();
+	DB.closeConnection();
+
 	}
-
 }
-
 /*
-Connection conn = DB.getConnection();
-Bank ba = new Bank(conn, "wanderson");
-Double balance = ba.getBalance();
-
-System.out.println(balance);
-
-ba.deposit(500.0);
-
-balance = ba.getBalance();
-
-System.out.println(balance);
-
-DB.closeConnection();
-*/
+ * Connection conn = DB.getConnection(); Bank ba = new Bank(conn, "wanderson");
+ * Double balance = ba.getBalance();
+ * 
+ * System.out.println(balance);
+ * 
+ * ba.deposit(500.0);
+ * 
+ * balance = ba.getBalance();
+ * 
+ * System.out.println(balance);
+ * 
+ * DB.closeConnection();
+ */
