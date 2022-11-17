@@ -1,4 +1,4 @@
-package db.connections;
+package src.db.connections;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,8 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-
-import db.DB;
+import src.db.DB;
 
 public class Connections {
 
@@ -15,15 +14,17 @@ public class Connections {
 	private PreparedStatement st = null;
 	private Statement stm = null;
 	private ResultSet result = null;
-
+	
 	public Connections() {
+		conn = DB.getConnection();
+	}
+	public Connections(Connection conn) {
+		this.conn = conn;
 	}
 
 	public String logIn(String usuario, String pass) {
 		
-		try {	
-			conn = DB.getConnection();
-			
+		try {			
 			String query = "SELECT client_name FROM javabank WHERE client_name = '"
 					+usuario+"' AND client_password = '"
 					+pass+"'";
@@ -40,20 +41,13 @@ public class Connections {
 		catch (SQLException e) {
 			e.printStackTrace();
 		}
-		finally {
-			DB.closeStatement(stm);
-			DB.closeResultSet(result);
-			DB.closeConnection();
-		}
 		
-		return "";
+		return null;
 		
 	}
 
 	public void createUser(String usuario, String password) {
 		try {
-			conn = DB.getConnection();
-
 			st = conn.prepareStatement(
 					"INSERT INTO javabank" + "(client_name, client_balance, client_password)" + "VALUES (?, ?, ?)");
 			st.setString(1, usuario);
@@ -63,11 +57,9 @@ public class Connections {
 			st.executeUpdate();
 
 			System.out.println("User created");
-		} catch (SQLException e) {
+		} 
+		catch (SQLException e) {
 			e.printStackTrace();
-		} finally {
-			DB.closeStatement(st);
-			DB.closeConnection();
 		}
 	}
 
