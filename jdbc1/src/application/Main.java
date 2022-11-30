@@ -7,7 +7,7 @@ import src.db.DB;
 import src.db.connections.Connections;
 import src.entities.Bank;
 
-public class Program {
+public class Main {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -24,12 +24,13 @@ public class Program {
 			if (n == 1) {
 				sc.nextLine();
 				System.out.println("----LogIn----");
-
+				
 				System.out.print("Name: ");
 				String name = sc.nextLine();
 
 				System.out.print("Password: ");
 				String pass = sc.nextLine();
+				
 				
 				String result = connec.logIn(name, pass);
 		
@@ -45,6 +46,7 @@ public class Program {
 
 						op = sc.nextInt();
 						if (op == 0) {
+							sc.close();
 							return;
 						}
 						else if (op == 1) {
@@ -90,17 +92,3 @@ public class Program {
 
 	}
 }
-/*
- * Connection conn = DB.getConnection(); Bank ba = new Bank(conn, "wanderson");
- * Double balance = ba.getBalance();
- * 
- * System.out.println(balance);
- * 
- * ba.deposit(500.0);
- * 
- * balance = ba.getBalance();
- * 
- * System.out.println(balance);
- * 
- * DB.closeConnection();
- */

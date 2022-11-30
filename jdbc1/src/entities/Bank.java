@@ -28,6 +28,11 @@ public class Bank {
 		this.pass = pass;
 	}
 
+	public String getClient() {
+		return client;
+	}
+	
+
 	public void deposit(Double amount) {
 		try {
 			String query = "UPDATE javabank SET client_balance" + "= client_balance + ?" + "WHERE "
@@ -90,5 +95,4 @@ public class Bank {
 			e.printStackTrace();
 		}
 	}
-
 }
