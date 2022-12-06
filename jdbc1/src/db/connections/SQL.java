@@ -6,8 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import src.db.DB;
-
 public class SQL extends Connections {
 
 	private PreparedStatement st = null;
@@ -20,7 +18,8 @@ public class SQL extends Connections {
 	public SQL(Connection conn) {
 		super(conn);
 	}
-
+	
+	@Override
 	public String logIn(String usuario, String pass) {
 		
 		try {			
@@ -44,7 +43,8 @@ public class SQL extends Connections {
 		return null;
 		
 	}
-
+	
+	@Override
 	public void createUser(String usuario, String password) {
 		try {
 			st = conn.prepareStatement(

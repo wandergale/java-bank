@@ -1,16 +1,8 @@
 package src.db.connections;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
 
 public class NoSQL extends Connections {
-
-	private Connection conn;
-	private PreparedStatement st;
-	private Statement stm;
-	private ResultSet result;
 	
 	public NoSQL() {
 		super();
@@ -19,11 +11,15 @@ public class NoSQL extends Connections {
 		super(conn);
 	}
 
+	@Override
 	public String logIn(String usuario, String pass) {
 		return pass;
 	}
-
+	
+	@Override
 	public void createUser(String usuario, String password) {
+		// ...
 	}
+
 
 }
