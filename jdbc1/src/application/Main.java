@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import src.db.DB;
 import src.db.connections.Connections;
+import src.db.connections.SQL;
 import src.entities.Bank;
 
 public class Main {
@@ -14,7 +15,7 @@ public class Main {
 		
 		Connection conn = DB.getConnection();
 		
-		Connections connec = new Connections(conn);
+		Connections connec = new SQL(conn);
 
 		System.out.println("Sign In | Sign Up");
 		int n = 1;
